@@ -39,4 +39,25 @@ public class LivroTest {
 
         Assert.assertNotNull(livro.getCodigo());
     }
+
+    @Test
+    public void verificarValorLivroValido(){
+        livro = new Livro();
+        livro.setValor(32.0);
+
+        boolean verificaValor = livro.verificaValorLivro();
+
+        Assert.assertTrue(verificaValor);
+    }
+
+    @Test
+    public void verificarValorLivroInvalido(){
+        livro = new Livro();
+        livro.setValor(0);
+
+        boolean verificaValor = livro.verificaValorLivro();
+
+        Assert.assertFalse(verificaValor);
+    }
+
 }
