@@ -1,5 +1,7 @@
 package modulo4;
 
+import java.util.Objects;
+
 public class Livro {
 
     private String codigo;
@@ -55,5 +57,18 @@ public class Livro {
         }else {
             return false;
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Livro livro = (Livro) o;
+        return Objects.equals(codigo, livro.codigo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codigo);
     }
 }
