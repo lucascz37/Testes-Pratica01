@@ -1,5 +1,6 @@
 package modulo3;
 
+import modulo4.Livro;
 import org.junit.Test;
 import org.junit.BeforeClass;
 import org.junit.AfterClass;
@@ -17,7 +18,18 @@ public class BibliotecaTest {
     @BeforeClass
     public static void setUp(){
         biblioteca = new Biblioteca();
-        biblioteca.setLivros(List.of(new String[]{"Engenharia de software", "Sistemas Embarcados", "Scrum book"}));
+
+        Livro livro = new Livro();
+        livro.setNome("Engenharia de software");
+        livro.setCodigo("123");
+        Livro livro1 = new Livro();
+        livro1.setNome("Sistemas Embarcados");
+        livro1.setCodigo("1234");
+        Livro livro2 = new Livro();
+        livro2.setCodigo("12345");
+        livro2.setNome("Scrum book");
+
+        biblioteca.setLivros(List.of(new Livro[]{livro, livro1, livro2}));
         logger.info("Iniciando Testes: Biblioteca");
     }
 
@@ -33,7 +45,14 @@ public class BibliotecaTest {
 
     @Test
     public void testBibliotecaPossueLivros(){
-        assertTrue(biblioteca.possuiLivros(List.of(new String[]{"Engenharia de software", "Sistemas Embarcados"})));
+        Livro livro = new Livro();
+        livro.setNome("Engenharia de software");
+        livro.setCodigo("123");
+        Livro livro1 = new Livro();
+        livro1.setCodigo("1234");
+        livro1.setNome("Sistemas Embarcados");
+
+        assertTrue(biblioteca.possuiLivros(List.of(new Livro[]{livro, livro1})));
     }
 
     @Test

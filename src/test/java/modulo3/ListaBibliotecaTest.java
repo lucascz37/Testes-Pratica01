@@ -1,5 +1,7 @@
 package modulo3;
 
+import modulo1.Gerente;
+import modulo4.Livro;
 import org.junit.Test;
 import org.junit.BeforeClass;
 import org.junit.AfterClass;
@@ -15,14 +17,26 @@ public class ListaBibliotecaTest {
 
     @BeforeClass
     public static void setUp(){
+
+        Livro livro = new Livro();
+        livro.setNome("Engenharia de software");
+        Livro livro1 = new Livro();
+        livro1.setNome("Sistemas Embarcados");
+        Livro livro2 = new Livro();
+        livro2.setNome("Scrum book");
+
         Biblioteca b = new Biblioteca();
-        b.setGerente("Lucas");
+        Gerente lucas = new Gerente();
+        lucas.setNome("Lucas");
+        b.setGerente(lucas);
         b.setNome("b");
-        b.setLivros(List.of(new String[]{"Engenharia de software", "Sistemas Embarcados", "Scrum book"}));
+        b.setLivros(List.of(new Livro[]{livro, livro1, livro2}));
 
         Biblioteca b1 = new Biblioteca();
-        b1.setLivros(List.of(new String[]{"Engenharia de software", "Sistemas Embarcados"}));
-        b1.setGerente("Zézinho");
+        b1.setLivros(List.of(new Livro[]{livro, livro1}));
+        Gerente zezinho = new Gerente();
+        zezinho.setNome("zezinho");
+        b1.setGerente(zezinho);
         b1.setNome("b1");
 
         lista = new ListaBiblioteca();
@@ -46,7 +60,7 @@ public class ListaBibliotecaTest {
     }
 
     @Test
-    public void testProcurarPor(){
-        assertEquals("Lucas", lista.findPorNome("b").getGerente());
+    public void testProcurarPorNome(){
+        assertEquals("Lucas", lista.findPorNome("b").getGerente().getNome());
     }
 }
