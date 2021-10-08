@@ -14,11 +14,11 @@
 - [ ] Pagamento Interface (Pessoa, emprestimo, desconto)
 
 ## Modulo 3
-- [ ] ListaDeFaculdades (ListarFaculdades, Procurar por nome, filtrar por nome)
-- [ ] Faculdade (lista de bibliotecas, filtrar por nome, lista de Pessoas, arrecadado)
-- [ ] ListaDeBibliotecas (bibliotecas, procurar por nome)
-- [ ] Biblioteca (funcionários, Gerente, lista livros, ListaDevolução, lista de emprestimo)
-- [ ] TransaçãoFinanceira (faculdade, pagamento)
+- [x] ListaDeFaculdades (ListarFaculdades, Procurar por nome, filtrar por nome)
+- [x] Faculdade (lista de bibliotecas, filtrar por nome, lista de Pessoas, arrecadado)
+- [x] ListaDeBibliotecas (bibliotecas, procurar por nome)
+- [x] Biblioteca (funcionários, Gerente, lista livros, ListaDevolução, lista de emprestimo)
+- [x] TransaçãoFinanceira (faculdade, pagamento)
 
 ## Modulo 4
 - [ ] ListaEmprestimo

@@ -1,5 +1,7 @@
 package modulo3;
 
+import modulo1.Pessoa;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -9,7 +11,7 @@ public class Faculdade {
 
     private double arrecadado;
 
-    private List<String> pessoas; //Enquanto a classe de pessoa não é criada
+    private List<Pessoa> pessoas;
 
     private ListaBiblioteca bibliotecas;
 
@@ -17,7 +19,7 @@ public class Faculdade {
 
     }
 
-    public Faculdade(String nome, double arrecadado, List<String> pessoas, ListaBiblioteca bibliotecas) {
+    public Faculdade(String nome, double arrecadado, List<Pessoa> pessoas, ListaBiblioteca bibliotecas) {
         this.nome = nome;
         this.arrecadado = arrecadado;
         this.pessoas = pessoas;
@@ -28,8 +30,8 @@ public class Faculdade {
         arrecadado += valor;
     }
 
-    public List<String> procurarPessoaPorNome(String nome){
-        return pessoas.stream().filter(p -> p.equals(nome)).collect(Collectors.toList());
+    public List<Pessoa> procurarPessoaPorNome(String nome){
+        return pessoas.stream().filter(p -> p.getNome().equals(nome)).collect(Collectors.toList());
     }
 
 
@@ -49,11 +51,11 @@ public class Faculdade {
         this.arrecadado = arrecadado;
     }
 
-    public List<String> getPessoas() {
+    public List<Pessoa> getPessoas() {
         return pessoas;
     }
 
-    public void setPessoas(List<String> pessoas) {
+    public void setPessoas(List<Pessoa> pessoas) {
         this.pessoas = pessoas;
     }
 

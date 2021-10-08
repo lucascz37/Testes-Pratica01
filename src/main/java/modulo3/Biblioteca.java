@@ -1,24 +1,27 @@
 package modulo3;
 
+import modulo1.Gerente;
+import modulo4.Livro;
+
 import java.util.List;
 
 public class Biblioteca {
 
     private String nome;
 
-    private String gerente; //Enquanto a classe de gerente não é criada
+    private Gerente gerente; //Enquanto a classe de gerente não é criada
 
-    private List<String> livros; //Enquanto a classe livro não é criada
+    private List<Livro> livros; //Enquanto a classe livro não é criada
 
     private List<String> devolucao; //enquanto a classe devolução não é criada
 
     private List<String> emprestimo; //enquanto a classe emprestimo não é criada
 
     public boolean possueLivro(String nome){
-        return livros.stream().filter(p -> p.equals(nome)).count() >= 1;
+        return livros.stream().filter(p -> p.getNome().equals(nome)).count() >= 1;
     }
 
-    public boolean possuiLivros(List<String> lista){
+    public boolean possuiLivros(List<Livro> lista){
         return livros.stream().filter(lista::contains).count() == lista.size();
     }
 
@@ -34,19 +37,19 @@ public class Biblioteca {
         this.nome = nome;
     }
 
-    public String getGerente() {
+    public Gerente getGerente() {
         return gerente;
     }
 
-    public void setGerente(String gerente) {
+    public void setGerente(Gerente gerente) {
         this.gerente = gerente;
     }
 
-    public List<String> getLivros() {
+    public List<Livro> getLivros() {
         return livros;
     }
 
-    public void setLivros(List<String> livros) {
+    public void setLivros(List<Livro> livros) {
         this.livros = livros;
     }
 

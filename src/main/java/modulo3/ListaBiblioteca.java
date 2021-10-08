@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class ListaBiblioteca {
 
-    private List<Biblioteca> bibliotecas; //Enquanto a classe de biblioteca não é criada
+    private List<Biblioteca> bibliotecas;
 
     public ListaBiblioteca() {
         this.bibliotecas = new ArrayList<>();
@@ -25,7 +25,7 @@ public class ListaBiblioteca {
     }
 
     public Biblioteca findPorGerente(String nome){
-        return bibliotecas.stream().filter(p -> p.getGerente().equals(nome)).findFirst().orElse(null);
+        return bibliotecas.stream().filter(p -> p.getGerente().getNome().equals(nome)).findFirst().orElse(null);
     }
 
     public List<Biblioteca> findPorQuantLivros(int quant){
